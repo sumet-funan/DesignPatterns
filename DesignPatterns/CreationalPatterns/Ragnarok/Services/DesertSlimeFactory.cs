@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Ragnarok.Services
 {
-    public class DesertSlimeFactory
+    public class DesertSlimeFactory : SlimeFactory
     {
-        public Slime CreateNewSlime(string currentTime)
+        protected override Slime BuildASlime(string currentTime)
         {
             if (currentTime == "12:00")
             {
