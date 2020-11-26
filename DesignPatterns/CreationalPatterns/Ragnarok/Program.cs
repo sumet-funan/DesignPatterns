@@ -11,24 +11,26 @@ namespace Ragnarok
         {
             Console.WriteLine("Welcome to Ragnarok!");
 
-            SimpleSlimeFactory simpleSlimeFactory = new SimpleSlimeFactory();
+            PayonSlimeFactory payonSlimeFactory = new PayonSlimeFactory();
 
-            Slime mySlime = simpleSlimeFactory.CreateNewSlime("Payon", "12:00");
+            Slime mySlime = payonSlimeFactory.CreateNewSlime("12:00");
             Console.WriteLine(JsonSerializer.Serialize(mySlime));
 
-            mySlime = simpleSlimeFactory.CreateNewSlime("Payon", "18:00");
+            mySlime = payonSlimeFactory.CreateNewSlime("18:00");
             Console.WriteLine(JsonSerializer.Serialize(mySlime));
 
-            mySlime = simpleSlimeFactory.CreateNewSlime("Payon", "");
+            mySlime = payonSlimeFactory.CreateNewSlime("");
             Console.WriteLine(JsonSerializer.Serialize(mySlime));
 
-            mySlime = simpleSlimeFactory.CreateNewSlime("Desert", "12:00");
+            DesertSlimeFactory desertSlimeFactory = new DesertSlimeFactory();
+
+            mySlime = desertSlimeFactory.CreateNewSlime("12:00");
             Console.WriteLine(JsonSerializer.Serialize(mySlime));
 
-            mySlime = simpleSlimeFactory.CreateNewSlime("Desert", "19:00");
+            mySlime = desertSlimeFactory.CreateNewSlime("19:00");
             Console.WriteLine(JsonSerializer.Serialize(mySlime));
 
-            mySlime = simpleSlimeFactory.CreateNewSlime("Desert", "");
+            mySlime = desertSlimeFactory.CreateNewSlime("");
             Console.WriteLine(JsonSerializer.Serialize(mySlime));
 
             Console.WriteLine("Bye bye!");
