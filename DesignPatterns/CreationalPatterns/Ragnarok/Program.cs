@@ -13,10 +13,15 @@ namespace Ragnarok
 
             //CallSlimes();
 
-            MonsterFactory monsterFactory = new MonsterFactory();
-            monsterFactory.CreateASlime("payon");
-            monsterFactory.CreateAWolf("payon");
-            monsterFactory.CreateAGiantBird("payon");
+            IMonsterFactory monsterFactory = new PayonMonsterFactory();
+            monsterFactory.CreateASlime();
+            monsterFactory.CreateAWolf();
+            monsterFactory.CreateAGiantBird();
+
+            monsterFactory = new DesertMonsterFactory();
+            monsterFactory.CreateASlime();
+            monsterFactory.CreateAWolf();
+            monsterFactory.CreateAGiantBird();
 
             Console.WriteLine("Bye bye!");
         }
