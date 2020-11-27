@@ -11,6 +11,18 @@ namespace Ragnarok
         {
             Console.WriteLine("Welcome to Ragnarok!");
 
+            //CallSlimes();
+
+            MonsterFactory monsterFactory = new MonsterFactory();
+            monsterFactory.CreateASlime("payon");
+            monsterFactory.CreateAWolf("payon");
+            monsterFactory.CreateAGiantBird("payon");
+
+            Console.WriteLine("Bye bye!");
+        }
+
+        private static void CallSlimes()
+        {
             SlimeFactory slimeFactory = new PayonSlimeFactory();
 
             Slime mySlime = slimeFactory.CreateNewSlime("12:00");
@@ -32,8 +44,6 @@ namespace Ragnarok
 
             mySlime = slimeFactory.CreateNewSlime("");
             Console.WriteLine(JsonSerializer.Serialize(mySlime));
-
-            Console.WriteLine("Bye bye!");
         }
     }
 }
