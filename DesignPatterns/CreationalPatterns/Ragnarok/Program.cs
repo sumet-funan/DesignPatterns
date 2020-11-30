@@ -1,5 +1,6 @@
 ﻿using Ragnarok.Models;
 using Ragnarok.Services;
+using Ragnarok.Services.Weapons;
 using System;
 using System.Text.Json;
 
@@ -16,6 +17,11 @@ namespace Ragnarok
             //CallMosters();
 
             //CallEventBoss();
+
+            WeaponDirector weaponDirector = new WeaponDirector();
+
+            Console.WriteLine(JsonSerializer.Serialize(weaponDirector.CreateBasicWeapon(new SwordMaker())));
+            Console.WriteLine(JsonSerializer.Serialize(weaponDirector.CreateFireWeapon(new SwordMaker())));
 
             Console.WriteLine("Bye bye!");
         }
