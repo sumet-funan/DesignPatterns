@@ -13,6 +13,13 @@ namespace Ragnarok
 
             //CallSlimes();
 
+            //CallMosters();
+
+            Console.WriteLine("Bye bye!");
+        }
+
+        private static void CallMosters()
+        {
             IMonsterFactory monsterFactory = new PayonMonsterFactory();
             Console.WriteLine(JsonSerializer.Serialize(monsterFactory.CreateASlime()));
             Console.WriteLine(JsonSerializer.Serialize(monsterFactory.CreateAWolf()));
@@ -22,8 +29,6 @@ namespace Ragnarok
             Console.WriteLine(JsonSerializer.Serialize(monsterFactory.CreateASlime()));
             Console.WriteLine(JsonSerializer.Serialize(monsterFactory.CreateAWolf()));
             Console.WriteLine(JsonSerializer.Serialize(monsterFactory.CreateAGiantBird()));
-
-            Console.WriteLine("Bye bye!");
         }
 
         private static void CallSlimes()
