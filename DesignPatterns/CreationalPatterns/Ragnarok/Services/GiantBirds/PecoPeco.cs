@@ -7,5 +7,11 @@ namespace Ragnarok.Services
 {
     public class PecoPeco : GiantBird
     {
+        public PecoPeco()
+        {
+            Name = nameof(PecoPeco);
+            Skill = "Provocation";
+            IsBoss = false;
+        }
     }
 }

@@ -14,14 +14,14 @@ namespace Ragnarok
             //CallSlimes();
 
             IMonsterFactory monsterFactory = new PayonMonsterFactory();
-            monsterFactory.CreateASlime();
-            monsterFactory.CreateAWolf();
-            monsterFactory.CreateAGiantBird();
+            Console.WriteLine(JsonSerializer.Serialize(monsterFactory.CreateASlime()));
+            Console.WriteLine(JsonSerializer.Serialize(monsterFactory.CreateAWolf()));
+            Console.WriteLine(JsonSerializer.Serialize(monsterFactory.CreateAGiantBird()));
 
             monsterFactory = new DesertMonsterFactory();
-            monsterFactory.CreateASlime();
-            monsterFactory.CreateAWolf();
-            monsterFactory.CreateAGiantBird();
+            Console.WriteLine(JsonSerializer.Serialize(monsterFactory.CreateASlime()));
+            Console.WriteLine(JsonSerializer.Serialize(monsterFactory.CreateAWolf()));
+            Console.WriteLine(JsonSerializer.Serialize(monsterFactory.CreateAGiantBird()));
 
             Console.WriteLine("Bye bye!");
         }

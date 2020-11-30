@@ -7,5 +7,11 @@ namespace Ragnarok.Services
 {
     public class WildWolf : Wolf
     {
+        public WildWolf()
+        {
+            Name = nameof(WildWolf);
+            Skill = "Earth";
+            IsBoss = false;
+        }
     }
 }
