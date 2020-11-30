@@ -8,24 +8,17 @@ namespace Ragnarok.Services
     public class SwordMaker : IWeaponMaker
     {
         private int cardSlots = 2;
-        private string productName;
         private string elementType;
         private string creatorName;
 
-        public SwordMaker SetName(string name)
-        {
-            productName = name;
-            return this;
-        }
-
-        public SwordMaker SetElement(string element)
+        public IWeaponMaker SetElement(string element)
         {
             cardSlots = 0;
             elementType = element;
             return this;
         }
 
-        public SwordMaker SetCreatorName(string name)
+        public IWeaponMaker SetCreatorName(string name)
         {
             creatorName = name;
             return this;
@@ -35,8 +28,8 @@ namespace Ragnarok.Services
         {
             return new Weapon
             {
-                Name = productName,
-                Element = elementType,
+                Name = "Katana",
+                Element = elementType ?? "-",
                 CreatorName = creatorName,
                 PhysicalAttack = 10,
                 MaximumSlots = cardSlots,

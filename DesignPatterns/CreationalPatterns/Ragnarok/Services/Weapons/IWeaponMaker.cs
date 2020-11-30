@@ -7,12 +7,8 @@ namespace Ragnarok.Services
 {
     public interface IWeaponMaker
     {
-        public SwordMaker SetName(string name);
-
-        public SwordMaker SetElement(string element);
-
-        public SwordMaker SetCreatorName(string name);
-
-        public Weapon GetWeapon();
+        IWeaponMaker SetElement(string elementType);
+        IWeaponMaker SetCreatorName(string name);
+        Weapon GetWeapon();
     }
 }

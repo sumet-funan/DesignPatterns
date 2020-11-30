@@ -9,17 +9,31 @@ namespace Ragnarok.Services.Weapons
     {
         public Weapon CreateBasicWeapon(IWeaponMaker maker)
         {
-            return maker
-                    .SetCreatorName("Saladpuk")
-                    .GetWeapon();
+            var product = maker
+                .SetCreatorName("Saladpuk")
+                .GetWeapon();
+            return product;
         }
 
         public Weapon CreateFireWeapon(IWeaponMaker maker)
+            => createElementWeapon(maker, "Fire");
+
+        public Weapon CreateWindWeapon(IWeaponMaker maker)
+            => createElementWeapon(maker, "Wind");
+
+        public Weapon CreateWaterWeapon(IWeaponMaker maker)
+            => createElementWeapon(maker, "Water");
+
+        public Weapon CreateEarthWeapon(IWeaponMaker maker)
+            => createElementWeapon(maker, "Earth");
+
+        private Weapon createElementWeapon(IWeaponMaker maker, string element)
         {
-            return maker
-                    .SetElement("Fire")
-                    .SetCreatorName("Saladpuk")
-                    .GetWeapon();
+            var product = maker
+                .SetElement(element)
+                .SetCreatorName("Saladpuk")
+                .GetWeapon();
+            return product;
         }
     }
 }

@@ -18,10 +18,25 @@ namespace Ragnarok
 
             //CallEventBoss();
 
-            WeaponDirector weaponDirector = new WeaponDirector();
+            var director = new WeaponDirector();
 
-            Console.WriteLine(JsonSerializer.Serialize(weaponDirector.CreateBasicWeapon(new SwordMaker())));
-            Console.WriteLine(JsonSerializer.Serialize(weaponDirector.CreateFireWeapon(new SwordMaker())));
+            var swordMaker = new SwordMaker();
+            var basicSword = director.CreateBasicWeapon(swordMaker);
+            var earthSword = director.CreateFireWeapon(swordMaker);
+            Console.WriteLine(basicSword);
+            Console.WriteLine(earthSword);
+
+            var staffMaker = new StaffMaker();
+            var basicStaff = director.CreateBasicWeapon(staffMaker);
+            var waterStaff = director.CreateWaterWeapon(staffMaker);
+            Console.WriteLine(basicStaff);
+            Console.WriteLine(waterStaff);
+
+            var bowMaker = new BowMaker();
+            var basicBow = director.CreateBasicWeapon(bowMaker);
+            var windBow = director.CreateWindWeapon(bowMaker);
+            Console.WriteLine(basicBow);
+            Console.WriteLine(windBow);
 
             Console.WriteLine("Bye bye!");
         }
