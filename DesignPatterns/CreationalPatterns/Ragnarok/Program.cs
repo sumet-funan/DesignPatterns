@@ -13,6 +13,32 @@ namespace Ragnarok
 
             //CallSlimes();
 
+            //CallMosters();
+
+            //CallEventBoss();
+
+            Console.WriteLine("Bye bye!");
+        }
+
+        private static void CallEventBoss()
+        {
+            int damage = 10;
+
+            Console.WriteLine(JsonSerializer.Serialize(Detardeurus.GetInstance(damage)));
+            Console.WriteLine(JsonSerializer.Serialize(Detardeurus.GetInstance(damage)));
+            Console.WriteLine(JsonSerializer.Serialize(Detardeurus.GetInstance(damage)));
+            Console.WriteLine(JsonSerializer.Serialize(Detardeurus.GetInstance(damage)));
+            Console.WriteLine(JsonSerializer.Serialize(Detardeurus.GetInstance(damage)));
+            Console.WriteLine(JsonSerializer.Serialize(Detardeurus.GetInstance(damage)));
+
+            var sig = Singleton.Instance;
+
+            Console.WriteLine(JsonSerializer.Serialize(sig));
+            Console.WriteLine(JsonSerializer.Serialize(Singleton.Instance));
+        }
+
+        private static void CallMosters()
+        {
             IMonsterFactory monsterFactory = new PayonMonsterFactory();
             Console.WriteLine(JsonSerializer.Serialize(monsterFactory.CreateASlime()));
             Console.WriteLine(JsonSerializer.Serialize(monsterFactory.CreateAWolf()));
@@ -22,8 +48,6 @@ namespace Ragnarok
             Console.WriteLine(JsonSerializer.Serialize(monsterFactory.CreateASlime()));
             Console.WriteLine(JsonSerializer.Serialize(monsterFactory.CreateAWolf()));
             Console.WriteLine(JsonSerializer.Serialize(monsterFactory.CreateAGiantBird()));
-
-            Console.WriteLine("Bye bye!");
         }
 
         private static void CallSlimes()
