@@ -13,11 +13,35 @@ namespace Ragnarok
             Console.WriteLine("Welcome to Ragnarok!");
 
             //CallSlimes();
-
             //CallMosters();
-
             //CallEventBoss();
+            //CreateWeapon();
 
+            Character object1 = new Character
+            {
+                Class = "Novice",
+                Level = 2,
+                HP = 20,
+                SP = 12,
+                Hat = new Hat
+                {
+                    Name = "Antlers"
+                }
+            };
+
+            Character object2 = object1.Clone();
+
+            object2.Hat.Name = "Santa Hat";
+            object2.HP = 50;
+
+            Console.WriteLine(JsonSerializer.Serialize(object1));
+            Console.WriteLine(JsonSerializer.Serialize(object2));
+
+            Console.WriteLine("Bye bye!");
+        }
+
+        private static void CreateWeapon()
+        {
             var director = new WeaponDirector();
 
             var swordMaker = new SwordMaker();
@@ -37,8 +61,6 @@ namespace Ragnarok
             var windBow = director.CreateWindWeapon(bowMaker);
             Console.WriteLine(basicBow);
             Console.WriteLine(windBow);
-
-            Console.WriteLine("Bye bye!");
         }
 
         private static void CallEventBoss()
