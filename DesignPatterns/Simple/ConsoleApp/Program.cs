@@ -11,11 +11,11 @@ namespace ConsoleApp
         private static string _column = "siteBuId";
         private static string _parameterName = "@siteBuId";
         private static string _condition = $"{_column} = {_parameterName}";
-        private static string _query = @"SELECT * FROM Product p
+        private static string _querySimple = @"SELECT * FROM Product p
         WHERE p.name = @name
         AND p.price = @price";
 
-        private static string _queryAdvance = @"SELECT * FROM Product p
+        private static string _queryAdvance1 = @"SELECT * FROM Product p
         INNER JOIN Order o ON o.productId = p.productId
         INNER JOIN Customer c ON c.customerId = o.customerId
         WHERE p.productId = @productId
@@ -23,9 +23,10 @@ namespace ConsoleApp
 
         static void Main(string[] args)
         {
-            string result = InsertConditionV1(_query);
-            string resultAdvance = InsertConditionV1(_queryAdvance);
+            string result = InsertConditionV1(_querySimple);
             Console.WriteLine(result);
+            string resultAdvance = InsertConditionV1(_queryAdvance1);
+            Console.WriteLine(resultAdvance);
         }
 
         private static string InsertConditionV1(string queryString)
