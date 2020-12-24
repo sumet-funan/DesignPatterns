@@ -21,6 +21,7 @@ namespace OCP
             var sbd = new StringBuilder();
             for (int i = 0; i < doc.TotalPages(); i++)
             {
+
                 sbd.Append(doc.ReadAllText(i));
             }
             return sbd.ToString();
@@ -50,7 +51,7 @@ namespace OCP
         private List<string> Joins = new List<string>();
         private string JoinCondition;
 
-    public QueryBuilder Select(string fields)
+        public QueryBuilder Select(string fields)
         {
             Fields = fields;
             return this;
@@ -70,6 +71,11 @@ namespace OCP
 
         public QueryBuilder JoinOn(string condition)
         {
+            if (string.IsNullOrWhiteSpace(condition))
+            {
+                throw new ArgumentException("message", nameof(condition));
+            }
+
             JoinCondition = condition;
             return this;
         }
@@ -113,5 +119,5 @@ namespace OCP
 
             return sb.ToString();
         }
-    } 
+    }
 }
